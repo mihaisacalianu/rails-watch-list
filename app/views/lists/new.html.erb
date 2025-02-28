@@ -1,5 +1,4 @@
 <h1>Add new List</h1>
-<%= simple_form_for [@list] do |f| %>
-  <%= f.input :name %>
-  <%= f.submit "Create List" %>
-<% end %>
+
+<%= render 'form',list: @list %>
+<%= render 'home', path: lists_path %>

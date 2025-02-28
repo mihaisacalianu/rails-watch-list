@@ -1,1 +1,12 @@
-<h1>Show page</h1>
+<div class="container">
+  <h1><%= @list.name %> list!</h1>
+
+  <% @list.bookmarks.each do |bookmark| %>
+    <h3><%= bookmark.movie.title %></h3>
+    <h3><%= bookmark.comment %></h3>
+    <%= link_to "Delete Bookmark", bookmark_path(bookmark), data:{turbo_method: :delete, turbo_confirm: "Are your sure?"}, class: "btn btn-danger"%>
+  <% end %>
+
+<%= link_to 'Create a bookmark', new_list_bookmark_path(@list), class: "btn btn-primary" %>
+<%= render 'home' , path: lists_path %>
+</div>
