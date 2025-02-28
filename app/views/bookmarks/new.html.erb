@@ -1,8 +1,10 @@
+<%= render "shared/banner" %>
+
+<div class="mx-auto mt-5 p-5 bg-white w-50 ">
 <h1>New Bookmark</h1>
 <%= simple_form_for [@list, @bookmark] do |f| %>
   <%= f.input :comment %>
   <%= f.association :movie %>
   <%= f.submit "Create Bookmark" %>
 <% end %>
-
-<%= render "lists/home", path: lists_path %>
+</div>
